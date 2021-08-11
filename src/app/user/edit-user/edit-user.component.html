@@ -1,0 +1,47 @@
+<div class="mt-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+                    <fieldset>
+                        <legend class="text-info">Edit User</legend>
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" class="form-control" formControlName="name"
+                                [ngClass]="{ 'is-invalid': submitted && f.name.errors }" />
+                            <div *ngIf="(f.name.touched || submitted)" class="text-danger">
+                                <div *ngIf="f.name?.errors?.required"> Name is required</div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="text" class="form-control" formControlName="email"
+                                [ngClass]="{ 'is-invalid': submitted && f.email.errors }" />
+                            <div *ngIf="(f.email.touched || submitted)" class="text-danger">
+                                <div *ngIf="f.email?.errors?.required"> Email is required</div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone</label>
+                            <input type="text" class="form-control" formControlName="phone"
+                                [ngClass]="{ 'is-invalid': submitted && f.phone.errors }" />
+                            <div *ngIf="(f.phone.touched || submitted)" class="text-danger">
+                                <div *ngIf="f.phone?.errors?.required"> Phone is required</div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="website">Website</label>
+                            <input type="text" class="form-control" formControlName="website"
+                                [ngClass]="{ 'is-invalid': submitted && f.website.errors }" />
+                            <div *ngIf="(f.website.touched || submitted)" class="text-danger">
+                                <div *ngIf="f.website?.errors?.required"> Website is required</div>
+                            </div>
+                        </div>
+                        <br>
+                        <button type="submit" class="btn btn-info">Save</button>
+                    </fieldset>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
